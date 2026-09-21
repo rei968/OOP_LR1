@@ -17,147 +17,219 @@
 
         private void InitializeComponent()
         {
-            this.dgvItems = new System.Windows.Forms.DataGridView();
-            this.lblSearch = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-
-            this.lblArticle = new System.Windows.Forms.Label();
-            this.txtArticle = new System.Windows.Forms.TextBox();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.txtTitle = new System.Windows.Forms.TextBox();
-            this.lblColor = new System.Windows.Forms.Label();
-            this.txtColor = new System.Windows.Forms.TextBox();
-            this.lblPrice = new System.Windows.Forms.Label();
-            this.numPrice = new System.Windows.Forms.NumericUpDown();
-            this.lblQuantity = new System.Windows.Forms.Label();
-            this.numQuantity = new System.Windows.Forms.NumericUpDown();
-
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnLoad = new System.Windows.Forms.Button();
-
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPrice)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).BeginInit();
-            this.SuspendLayout();
-
-            // Пошук
-            this.lblSearch.Location = new System.Drawing.Point(12, 15);
-            this.lblSearch.Size = new System.Drawing.Size(50, 20);
-            this.lblSearch.Text = "Пошук:";
-
-            this.txtSearch.Location = new System.Drawing.Point(65, 12);
-            this.txtSearch.Size = new System.Drawing.Size(250, 22);
-
-            this.btnSearch.Location = new System.Drawing.Point(325, 11);
-            this.btnSearch.Size = new System.Drawing.Size(85, 25);
-            this.btnSearch.Text = "Знайти";
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-
-            this.btnReset.Location = new System.Drawing.Point(415, 11);
-            this.btnReset.Size = new System.Drawing.Size(85, 25);
-            this.btnReset.Text = "Скинути";
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-
-            // Таблиця DataGridView
-            this.dgvItems.Location = new System.Drawing.Point(12, 45);
-            this.dgvItems.Size = new System.Drawing.Size(560, 420);
-            this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItems.MultiSelect = false;
-            this.dgvItems.ReadOnly = true;
-
-            // Кнопка видалення
-            this.btnDelete.Location = new System.Drawing.Point(12, 475);
-            this.btnDelete.Size = new System.Drawing.Size(180, 30);
-            this.btnDelete.Text = "Видалити обраний";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-
-            // Поля форми праворуч
-            int rightX = 590;
-            int inputX = 670;
-
-            this.lblArticle.Location = new System.Drawing.Point(rightX, 50);
-            this.lblArticle.Size = new System.Drawing.Size(70, 20);
-            this.lblArticle.Text = "Артикул:";
-            this.txtArticle.Location = new System.Drawing.Point(inputX, 47);
-            this.txtArticle.Size = new System.Drawing.Size(170, 22);
-
-            this.lblTitle.Location = new System.Drawing.Point(rightX, 85);
-            this.lblTitle.Size = new System.Drawing.Size(70, 20);
-            this.lblTitle.Text = "Назва:";
-            this.txtTitle.Location = new System.Drawing.Point(inputX, 82);
-            this.txtTitle.Size = new System.Drawing.Size(170, 22);
-
-            this.lblColor.Location = new System.Drawing.Point(rightX, 120);
-            this.lblColor.Size = new System.Drawing.Size(70, 20);
-            this.lblColor.Text = "Колір:";
-            this.txtColor.Location = new System.Drawing.Point(inputX, 117);
-            this.txtColor.Size = new System.Drawing.Size(170, 22);
-
-            this.lblPrice.Location = new System.Drawing.Point(rightX, 155);
-            this.lblPrice.Size = new System.Drawing.Size(70, 20);
-            this.lblPrice.Text = "Ціна:";
-            this.numPrice.Location = new System.Drawing.Point(inputX, 152);
-            this.numPrice.Size = new System.Drawing.Size(170, 22);
-            this.numPrice.Maximum = 1000000;
-            this.numPrice.DecimalPlaces = 2;
-
-            this.lblQuantity.Location = new System.Drawing.Point(rightX, 190);
-            this.lblQuantity.Size = new System.Drawing.Size(70, 20);
-            this.lblQuantity.Text = "Кількість:";
-            this.numQuantity.Location = new System.Drawing.Point(inputX, 187);
-            this.numQuantity.Size = new System.Drawing.Size(170, 22);
-            this.numQuantity.Maximum = 10000;
-
-            // Кнопка додавання
-            this.btnAdd.Location = new System.Drawing.Point(rightX, 230);
-            this.btnAdd.Size = new System.Drawing.Size(250, 35);
-            this.btnAdd.Text = "Додати товар";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-
-            // Кнопки збереження та завантаження
-            this.btnSave.Location = new System.Drawing.Point(rightX, 430);
-            this.btnSave.Size = new System.Drawing.Size(250, 32);
-            this.btnSave.Text = "Зберегти у файл";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-
-            this.btnLoad.Location = new System.Drawing.Point(rightX, 470);
-            this.btnLoad.Size = new System.Drawing.Size(250, 32);
-            this.btnLoad.Text = "Завантажити з файлу";
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
-
-            // Налаштування головної форми
-            this.ClientSize = new System.Drawing.Size(860, 520);
-            this.Controls.Add(this.lblSearch);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.dgvItems);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.lblArticle);
-            this.Controls.Add(this.txtArticle);
-            this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.txtTitle);
-            this.Controls.Add(this.lblColor);
-            this.Controls.Add(this.txtColor);
-            this.Controls.Add(this.lblPrice);
-            this.Controls.Add(this.numPrice);
-            this.Controls.Add(this.lblQuantity);
-            this.Controls.Add(this.numQuantity);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnLoad);
-            this.Text = "Облік товарів магазину (JYSK)";
-            this.Load += new System.EventHandler(this.Form1_Load);
-
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numPrice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            dgvItems = new DataGridView();
+            lblSearch = new Label();
+            txtSearch = new TextBox();
+            btnSearch = new Button();
+            btnReset = new Button();
+            btnDelete = new Button();
+            lblArticle = new Label();
+            txtArticle = new TextBox();
+            lblTitle = new Label();
+            txtTitle = new TextBox();
+            lblColor = new Label();
+            txtColor = new TextBox();
+            lblPrice = new Label();
+            numPrice = new NumericUpDown();
+            lblQuantity = new Label();
+            numQuantity = new NumericUpDown();
+            btnAdd = new Button();
+            btnSave = new Button();
+            btnLoad = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvItems).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numPrice).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numQuantity).BeginInit();
+            SuspendLayout();
+            // 
+            // dgvItems
+            // 
+            dgvItems.ColumnHeadersHeight = 29;
+            dgvItems.Location = new Point(12, 45);
+            dgvItems.MultiSelect = false;
+            dgvItems.Name = "dgvItems";
+            dgvItems.ReadOnly = true;
+            dgvItems.RowHeadersWidth = 51;
+            dgvItems.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvItems.Size = new Size(560, 420);
+            dgvItems.TabIndex = 4;
+            // 
+            // lblSearch
+            // 
+            lblSearch.Location = new Point(12, 15);
+            lblSearch.Name = "lblSearch";
+            lblSearch.Size = new Size(70, 20);
+            lblSearch.TabIndex = 0;
+            lblSearch.Text = "Пошук:";
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(88, 12);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(250, 27);
+            txtSearch.TabIndex = 1;
+            // 
+            // btnSearch
+            // 
+            btnSearch.Location = new Point(344, 13);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(85, 25);
+            btnSearch.TabIndex = 2;
+            btnSearch.Text = "Знайти";
+            btnSearch.Click += btnSearch_Click;
+            // 
+            // btnReset
+            // 
+            btnReset.Location = new Point(435, 12);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(85, 25);
+            btnReset.TabIndex = 3;
+            btnReset.Text = "Скинути";
+            btnReset.Click += btnReset_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(12, 475);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(180, 30);
+            btnDelete.TabIndex = 5;
+            btnDelete.Text = "Видалити обраний";
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // lblArticle
+            // 
+            lblArticle.Location = new Point(590, 50);
+            lblArticle.Name = "lblArticle";
+            lblArticle.Size = new Size(70, 20);
+            lblArticle.TabIndex = 6;
+            lblArticle.Text = "Артикул:";
+            // 
+            // txtArticle
+            // 
+            txtArticle.Location = new Point(670, 47);
+            txtArticle.Name = "txtArticle";
+            txtArticle.Size = new Size(170, 27);
+            txtArticle.TabIndex = 7;
+            // 
+            // lblTitle
+            // 
+            lblTitle.Location = new Point(590, 85);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(70, 20);
+            lblTitle.TabIndex = 8;
+            lblTitle.Text = "Назва:";
+            // 
+            // txtTitle
+            // 
+            txtTitle.Location = new Point(670, 82);
+            txtTitle.Name = "txtTitle";
+            txtTitle.Size = new Size(170, 27);
+            txtTitle.TabIndex = 9;
+            // 
+            // lblColor
+            // 
+            lblColor.Location = new Point(590, 120);
+            lblColor.Name = "lblColor";
+            lblColor.Size = new Size(70, 20);
+            lblColor.TabIndex = 10;
+            lblColor.Text = "Колір:";
+            // 
+            // txtColor
+            // 
+            txtColor.Location = new Point(670, 117);
+            txtColor.Name = "txtColor";
+            txtColor.Size = new Size(170, 27);
+            txtColor.TabIndex = 11;
+            // 
+            // lblPrice
+            // 
+            lblPrice.Location = new Point(590, 155);
+            lblPrice.Name = "lblPrice";
+            lblPrice.Size = new Size(70, 20);
+            lblPrice.TabIndex = 12;
+            lblPrice.Text = "Ціна:";
+            // 
+            // numPrice
+            // 
+            numPrice.DecimalPlaces = 2;
+            numPrice.Location = new Point(670, 152);
+            numPrice.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            numPrice.Name = "numPrice";
+            numPrice.Size = new Size(170, 27);
+            numPrice.TabIndex = 13;
+            // 
+            // lblQuantity
+            // 
+            lblQuantity.Location = new Point(590, 190);
+            lblQuantity.Name = "lblQuantity";
+            lblQuantity.Size = new Size(70, 20);
+            lblQuantity.TabIndex = 14;
+            lblQuantity.Text = "Кількість:";
+            // 
+            // numQuantity
+            // 
+            numQuantity.Location = new Point(670, 187);
+            numQuantity.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            numQuantity.Name = "numQuantity";
+            numQuantity.Size = new Size(170, 27);
+            numQuantity.TabIndex = 15;
+            // 
+            // btnAdd
+            // 
+            btnAdd.Location = new Point(590, 230);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(250, 35);
+            btnAdd.TabIndex = 16;
+            btnAdd.Text = "Додати товар";
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // btnSave
+            // 
+            btnSave.Location = new Point(590, 430);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(250, 32);
+            btnSave.TabIndex = 17;
+            btnSave.Text = "Зберегти у файл";
+            btnSave.Click += btnSave_Click;
+            // 
+            // btnLoad
+            // 
+            btnLoad.Location = new Point(590, 470);
+            btnLoad.Name = "btnLoad";
+            btnLoad.Size = new Size(250, 32);
+            btnLoad.TabIndex = 18;
+            btnLoad.Text = "Завантажити з файлу";
+            btnLoad.Click += btnLoad_Click;
+            // 
+            // Form1
+            // 
+            ClientSize = new Size(860, 520);
+            Controls.Add(lblSearch);
+            Controls.Add(txtSearch);
+            Controls.Add(btnSearch);
+            Controls.Add(btnReset);
+            Controls.Add(dgvItems);
+            Controls.Add(btnDelete);
+            Controls.Add(lblArticle);
+            Controls.Add(txtArticle);
+            Controls.Add(lblTitle);
+            Controls.Add(txtTitle);
+            Controls.Add(lblColor);
+            Controls.Add(txtColor);
+            Controls.Add(lblPrice);
+            Controls.Add(numPrice);
+            Controls.Add(lblQuantity);
+            Controls.Add(numQuantity);
+            Controls.Add(btnAdd);
+            Controls.Add(btnSave);
+            Controls.Add(btnLoad);
+            Name = "Form1";
+            Text = "Облік товарів магазину (JYSK)";
+            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvItems).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numPrice).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numQuantity).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
