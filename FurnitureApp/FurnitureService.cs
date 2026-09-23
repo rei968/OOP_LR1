@@ -25,7 +25,6 @@ namespace FurnitureApp
             _items.Add(item);
         }
 
-
         public bool RemoveItemByArticle(string article)
         {
             foreach (InteriorItem item in _items)
