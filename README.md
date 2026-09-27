@@ -37,3 +37,6 @@
 1. Склонуйте репозиторій:
    ```bash
    git clone [https://github.com/rei968/OOP_LR1.git](https://github.com/rei968/OOP_LR1.git)
+## Автор проєкту
+Розробник: Євгеній
+Студентський проєкт курсу ООП
