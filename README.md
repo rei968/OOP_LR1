@@ -39,4 +39,8 @@
    git clone [https://github.com/rei968/OOP_LR1.git](https://github.com/rei968/OOP_LR1.git)
 ## Автор проєкту
 Розробник: Євгеній
+<<<<<<< HEAD
 Студентський проєкт курсу ООП
+=======
+Студентський проєкт курсу ООП
+>>>>>>> d3fd67c7daaa2fd59f47ccdab70c704b5c79e70f
